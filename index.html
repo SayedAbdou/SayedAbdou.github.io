@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>World Run</title>
+
+  <style media="screen">
+
+  body {
+  background-image: url("3.jpg");
+  background-size: 1800px;
+
+
+  }
+
+  .wrapper {
+          width: 1200px;
+          height: 100%;
+          margin: 0 auto 20px auto;
+          box-shadow: 1px 1px 15px black, -1px -1px 15px black;;
+          background-color: rgba(250,235,215,0.7);}
+
+  .title {
+      text-align: center;
+      ba
+      height: 70px;
+      margin: 0;
+      overflow: hidden;
+      color: white;
+      }
+
+
+  #menu {
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      background-color: #FFA500;
+  }
+
+  .buttons {
+      float: left;
+      margin: 0px 72px 0px 0px;
+  }
+
+  .buttons a {
+      display: block;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  .buttons a:hover {
+      background-color: #FF4500;
+  }
+
+  .footer {
+  color: white;
+  height: 60px;
+  padding: 15px 0px 0px 20px ;
+  background-color: rgba(0,0,139,1.0);
+  }
+
+
+  .about {
+     text-align: center;
+     font-size: 20px;
+     font-family: "Courier New", Courier, monospace;
+     color: white;
+     text-shadow: 2px 2px 4px #000000
+  }
+
+  .top {
+     text-align: center;
+     font-size: 27px;
+     font-family: "Courier New", Courier, monospace;
+     color: white;
+     text-shadow: 0 0 3px #FF0000, 2px 2px 4px #000000;
+     overflow: auto;
+
+  }
+
+  .rs {
+    box-shadow: 0px 2px 5px black;
+    float: left;
+    margin: 5px 50px 5px 150px;
+  }
+
+  #slider {
+    width: 624px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  #slider .slides {
+    display: block;
+    width: 4096px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 624px;
+    height: 300px;
+  }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+
+  //settings for slider
+  var width = 624;
+  var animationSpeed = 1000;
+  var pause = 2500;
+  var currentSlide = 1;
+
+  //cache DOM elements
+  var $slider = $('#slider');
+  var $slideContainer = $('.slides', $slider);
+  var $slides = $('.slide', $slider);
+
+  var interval;
+
+  function startSlider() {
+      interval = setInterval(function() {
+          $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+              if (++currentSlide === $slides.length) {
+                  currentSlide = 1;
+                  $slideContainer.css('margin-left', 0);
+              }
+          });
+      }, pause);
+  }
+  function pauseSlider() {
+      clearInterval(interval);
+  }
+
+  $slideContainer
+      .on('mouseenter', pauseSlider)
+      .on('mouseleave', startSlider);
+
+  startSlider();
+
+
+});
+  </script>
+  </head>
+
+
+
+
+
+  <body>
+    <div class="wrapper">
+
+    <div class="title">
+    <img src="social.png" alt="social media links" width="20%" style="float: left; margin-right: 170px;">
+    <img src="logo.png" alt="logo" width="25%" style="float: left">
+    </div>
+
+
+
+    <header>
+    <ul id="menu">
+    <li class="buttons"><a href="index.html">Home</a></li>
+    <li class="buttons"><a href="Gallery.html">Gallery</a></li>
+    <li class="buttons"><a href="Reviews.html">Reviews</a></li>
+    <li class="buttons"><a href="Events.html">Events</a></li>
+    <li class="buttons"><a href="about.html">About</a></li>
+    <li class="buttons"><a href="Contact.html">Contact</a></li>
+    </ul>
+    </header>
+
+    <div id="slider">
+       <ul class="slides">
+         <li class="slide"> <a href="Gallery.html"> <img width="624px" height="400px" src="s1.jpg" alt="gallery link"></a></li>
+         <li class="slide"> <a href="Events.html"> <img width="624px" height="400px" src="s2.jpg" alt="Events"></a></li>
+         <li class="slide"> <a href="Reviews.html"> <img width="624px" height="400px" src="s3.jpg" alt="park Reviews"></a></li>
+         <li class="slide"> <a href="Gallery.html"> <img width="624px" height="400px" src="s1.jpg" alt="gallery link"></a></li>
+
+       </ul>
+    </div>
+
+
+    <hr>
+    <div class="about">
+      <b><p>WORLD RUN is a place for professional runners, amatures, or anybody who likes <br>
+      to run ... this is a place to find events, review parks, and join the running community.<br>
+      GET FIT, GET READY, GO !!!<br>
+      </p></b>
+    </div>
+
+    <hr>
+
+    <div class="top">
+       <h2 style="color:red">Top Runners in Kuala Lumper</h2><br>
+       <img class="rs" src="r1.jpg" alt="wasif" title="wasif" height="150" width="150">
+       <img class="rs" src="r2.jpg" alt="nazir" title="nazir" height="150" width="150">
+       <img class="rs" src="r3.jpg" alt="wan" title="wan" height="150" width="150">
+       <br>
+       <p style="float: left; margin: 5px 50px 5px 100px; font-size:20px">wasif bin Abdulmunir</p>
+       <p style="float: left; margin: 5px 50px 5px 100px; font-size:20px">Mohammad Nazir</p>
+       <p style="float: left; margin: 5px 50px 5px 120px; font-size:20px">wan Nor Syazwani</p>
+    </div>
+
+    <hr>
+
+    <div class="spon">
+      <h2 style="font-family: Impact;text-shadow: 4px 4px 3px black; text-align: center; color:white; font-size:40px">SPONSERS</h2>
+      <img src="logo2.jpg" alt="100p" height="150" width="200" style="margin: 5px 50px 5px 150px;">
+      <img src="logo3.jpg" alt="100p" height="150" width="150" style="margin: 0px 50px 5px 150px;">
+      <img src="logo4.jpg" alt="100p" height="150" width="200" style="margin: 0px 50px 5px 150px;">
+    </div>
+
+    <div class="footer">
+      <img src="social.png" alt="social media links" width="15%" style="float: right; margin-left: 170px;">
+      This website is a project for educational purposes. We do not claim ownership <br>
+      for any copyrighted material. All names are fake. <br>
+      IIUM Kullyah of ICT.
+    </div>
+
+    </div>
+  </body>
+</html>
